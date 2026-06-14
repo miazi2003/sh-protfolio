@@ -86,9 +86,9 @@ const Contact = ({ socials }) => {
             </p>
             
             <div className="social-links">
-              <motion.a href={socials.github} aria-label="Github" whileHover={{ y: -5, color: 'var(--accent-primary)' }}><Github /></motion.a>
-              <motion.a href={socials.linkedin} aria-label="LinkedIn" whileHover={{ y: -5, color: 'var(--accent-primary)' }}><Linkedin /></motion.a>
-              <motion.a href={socials.twitter} aria-label="Twitter" whileHover={{ y: -5, color: 'var(--accent-primary)' }}><Twitter /></motion.a>
+              <motion.a target="_blank" href={socials.github} aria-label="Github" whileHover={{ y: -5, color: 'var(--accent-primary)' }}><Github /></motion.a>
+              <motion.a target="_blank" href={socials.linkedin} aria-label="LinkedIn" whileHover={{ y: -5, color: 'var(--accent-primary)' }}><Linkedin /></motion.a>
+             
             </div>
 
             <div className="email-link">

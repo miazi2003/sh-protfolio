@@ -67,8 +67,7 @@ export const portfolioData = {
   ],
   
   socials: {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
-    twitter: "https://twitter.com"
+    github: "https://github.com/miazi2003",
+    linkedin: "https://linkedin.com/in/yeasinmiazi",
   }
 };
