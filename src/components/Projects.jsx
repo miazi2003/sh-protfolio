@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import './Projects.css';
 
 const Projects = ({ projects }) => {
@@ -19,42 +19,32 @@ const Projects = ({ projects }) => {
 
         <div className="projects-grid">
           {projects.map((project, index) => (
-            <motion.div 
+            <motion.a 
               key={project.id}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
               className="project-card"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              aria-label={`Open ${project.title} live store`}
             >
               <div className="project-image-container">
                 <img src={project.image} alt={project.title} className="project-image" />
                 <div className="project-overlay">
-                  <div className="project-links">
-                    <motion.a 
-                      href={project.link} 
-                      className="project-link"
-                      aria-label={`Open ${project.title}`}
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      target="_blank"
-                    >
-                      <ExternalLink size={24} />
-                    </motion.a>
-                    <motion.a 
-                      href="#" 
-                      className="project-link"
-                      aria-label={`${project.title} source code`}
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <Github size={24} />
-                    </motion.a>
+                  <div className="project-link-badge">
+                    <span>Visit Store</span>
+                    <ExternalLink size={16} />
                   </div>
                 </div>
               </div>
               <div className="project-info">
-                <h3 className="project-title">{project.title}</h3>
+                <div className="project-header">
+                  <h3 className="project-title">{project.title}</h3>
+                  <ExternalLink size={16} className="project-title-icon" />
+                </div>
                 <p className="project-description">{project.description}</p>
                 <div className="project-tech">
                   {project.tech.map(t => (
@@ -62,7 +52,7 @@ const Projects = ({ projects }) => {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
