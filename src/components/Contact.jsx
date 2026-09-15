@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, Twitter, Send } from 'lucide-react';
+import { Send } from 'lucide-react';
 import './Contact.css';
 
-const Contact = ({ socials }) => {
+const Contact = () => {
   const contactEmail = import.meta.env.VITE_CONTACT_EMAIL || 'hello@example.com';
   const emailConfig = {
     serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -82,19 +82,8 @@ const Contact = ({ socials }) => {
             <div className="section-kicker">Available for Projects</div>
             <h2 className="contact-title">Let's build a faster <span className="text-gradient">Shopify store</span>.</h2>
             <p className="contact-description">
-              Whether it is a headless Shopify build, custom theme, or scaling your e-commerce business, I can help turn the roadmap into clean, production-ready work.
+              Whether it is a headless Shopify build, custom theme, or scaling your e-commerce business, we help turn the roadmap into clean, production-ready work. Send us a message and we'll get back to you promptly.
             </p>
-            
-            <div className="social-links">
-              <motion.a target="_blank" href={socials.github} aria-label="Github" whileHover={{ y: -5, color: 'var(--accent-primary)' }}><Github /></motion.a>
-              <motion.a target="_blank" href={socials.linkedin} aria-label="LinkedIn" whileHover={{ y: -5, color: 'var(--accent-primary)' }}><Linkedin /></motion.a>
-             
-            </div>
-
-            <div className="email-link">
-              <Mail size={16} />
-              <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
-            </div>
           </motion.div>
 
           <motion.div 
@@ -134,7 +123,7 @@ const Contact = ({ socials }) => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Tell me about your Shopify project"
+                  placeholder="Tell us about your Shopify project"
                   rows="5"
                   required
                 />

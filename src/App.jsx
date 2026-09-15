@@ -17,7 +17,7 @@ function App() {
         <Skills skills={portfolioData.skills} />
         <Projects projects={portfolioData.projects} />
         <Experience experience={portfolioData.experience} />
-        <Contact socials={portfolioData.socials} />
+        <Contact />
       </main>
     </div>
   );
